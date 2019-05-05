@@ -4,7 +4,7 @@ Weatherstation based around ESP8266 and MQQT with deepsleep<br>
 Deze code behore bij Youtube videoclip:<br> <a href="https://www.youtube.com/watch?v=l8MCuDvR2ek" target="_blank"><img src="https://i.ytimg.com/vi/l8MCuDvR2ek/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCukInh4sH33ztIjzF9xCvjv1pOaw"></a><br>
 <br><br>
  20190122 Wemos weerstation door Michiel Erasmus.<br>
- Die programma verbind ana mqqt, publiceert meetdata en terug naar deepsleep.<br>
+ Die programma verbind aan mqqt, publiceert meetdata en terug naar deepsleep.<br>
  wanneer de Wemos in deepsleep is kan jy geen scketch upload. Ontkoppel eerst USB en daarna weer uploaden.<br>
 <br>
  Wat doet deze sketch;<br>
