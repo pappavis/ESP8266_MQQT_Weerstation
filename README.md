@@ -24,7 +24,7 @@ Deze code behore bij Youtbe videoclip:<br> <a href="https://www.youtube.com/watc
  5. Upload deze sketch naar Wemos / ESP8266.<br>
  <br>
  * Node red flows om te deployen;<br>
-<br>
+ <img src="https://github.com/pappavis/ESP8266_MQQT_Weerstation/blob/master/plaatjes/node-red_flow.jpg?raw=true" width="70%" height="70%"><br>
 <br>
 2019-01-21 door Michiel Erasmus #easylab4kids<br>
 <br>
