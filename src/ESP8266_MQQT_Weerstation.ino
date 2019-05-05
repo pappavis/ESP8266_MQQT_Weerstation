@@ -57,8 +57,8 @@ bool started1 = true;
 long duizendste1 = 1000000;  // dit is 1 seconden in deepSleep.
 unsigned long deepSleepInterval;  // elke 30 seconden de weersituatie bijwerken.
   
-const char* ssid = "Volksrepubliek";
-const char* password =  "C0mmodore64!";
+const char* ssid = "mijnSSD";
+const char* password =  "mijnWachtwoord";
 
 const char*   mqttServer = "dietpi";
 const int     mqttPort = 1883;
