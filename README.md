@@ -24,12 +24,14 @@ Deze code behore bij Youtube videoclip:<br> <a href="https://www.youtube.com/wat
  - Optioneel: SQLite Administrator
  
 ### Installatie
- - Download en installeer Dietpi image van Andreas Spiess op Raspberry Pi Zero W 1.3
- - Installeer Mosquitto MQQT
- - Importeer de Node-red flow naar node-red
- - Open de arduino sketch in Arduino IDE, en upload naar ESP8266.
- - In Node-red flow, check dat je endpoints heb aangemaakt 
-
+ 1. Download en installeer Dietpi image van Andreas Spiess op Raspberry Pi Zero W 1.3
+ 2. Installeer Mosquitto MQQT
+ 3. Importeer de Node-red flow naar node-red
+ 4. In Node-red flow, check dat je endpoints heb aangemaakt 
+ <img src="https://github.com/pappavis/ESP8266_MQQT_Weerstation/blob/master/plaatjes/node-red_node.jpg?raw=true">
+ 5. Open de arduino sketch in Arduino IDE, en upload naar ESP8266.
+ 6. Check of die flows werkt op http://dietpi:1880/ui/
+ 
 ### Randvoorwaarde
  WiFi, Ubuntu linux / Raspberry Pi Zero met dietpi image. Daarop staat sqlite, mosquitto en node-red geïnstalleerd.<br>
  Je kunt ook Ubuntu gebruiken ipv Pi Zero.<br>
