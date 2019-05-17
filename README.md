@@ -27,10 +27,10 @@ Deze code behore bij Youtube videoclip:<br> <a href="https://www.youtube.com/wat
  1. Download en installeer Dietpi image, zie <a href="http://www.sensorsiot.org/tag/mqtt/" target="_blank">Andreas Spiess</a> op Raspberry Pi Zero W 1.3
  2. Installeer Mosquitto MQQT
  3. Importeer de Node-red flow naar node-red
- 4. In Node-red flow, check dat je endpoints heb aangemaakt 
- <img src="https://github.com/pappavis/ESP8266_MQQT_Weerstation/blob/master/plaatjes/node-red_node.jpg?raw=true">
- 5. Open de arduino sketch in Arduino IDE, en upload naar ESP8266.
- 6. Check of die flows werkt op http://dietpi:1880/ui/
+ 4. In Node-red flow, check dat je endpoints heb aangemaakt. <br> 
+ <img src="https://github.com/pappavis/ESP8266_MQQT_Weerstation/blob/master/plaatjes/node-red_node.jpg?raw=true"><br> 
+ 5. Open de arduino sketch in Arduino IDE, en upload naar ESP8266.<br> 
+ 6. Check of die flows werkt op http://dietpi:1880/ui/ <br> 
  
 ### Randvoorwaarde
  WiFi, Ubuntu linux / Raspberry Pi Zero met dietpi image. Daarop staat sqlite, mosquitto en node-red geïnstalleerd.<br>
