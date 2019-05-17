@@ -24,7 +24,7 @@ Deze code behore bij Youtube videoclip:<br> <a href="https://www.youtube.com/wat
  - Optioneel: SQLite Administrator
  
 ### Installatie
- 1. Download en installeer Dietpi image van Andreas Spiess op Raspberry Pi Zero W 1.3
+ 1. Download en installeer Dietpi image, zie <a href="http://www.sensorsiot.org/tag/mqtt/" target="_blank">Andreas Spiess</a> op Raspberry Pi Zero W 1.3
  2. Installeer Mosquitto MQQT
  3. Importeer de Node-red flow naar node-red
  4. In Node-red flow, check dat je endpoints heb aangemaakt 
