@@ -36,7 +36,7 @@ Deze code behore bij Youtube videoclip:<br> <a href="https://www.youtube.com/wat
  WiFi, Ubuntu linux / Raspberry Pi Zero met dietpi image. Daarop staat sqlite, mosquitto en node-red geïnstalleerd.<br>
  Je kunt ook Ubuntu gebruiken ipv Pi Zero.<br>
 <br>
- Om deze kode te gebruiken;<br>
+ ### Samenvattend
  1. Voldoen aan de software randvoorwaarden.<br>
  2. Importeer onderstaand flows naar Node red. Installeer SQLlite in palette van node-red.<br>
  3. Download arduino bibliotheken zoals hieronder vermeld, en installeer in Arduino IDE.<br>
