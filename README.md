@@ -3,17 +3,35 @@ Weatherstation based around ESP8266 and MQQT with deepsleep<br>
 <br>
 Deze code behore bij Youtube videoclip:<br> <a href="https://www.youtube.com/watch?v=l8MCuDvR2ek" target="_blank"><img src="https://i.ytimg.com/vi/l8MCuDvR2ek/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCukInh4sH33ztIjzF9xCvjv1pOaw"></a><br>
 <br><br>
- 20190122 Wemos weerstation door Michiel Erasmus.<br>
+ ### Wemos D1 weerstation door Michiel Erasmus.<br>
  Die programma verbind aan mqqt, publiceert meetdata en terug naar deepsleep.<br>
  wanneer de Wemos in deepsleep is kan jy geen scketch upload. Ontkoppel eerst USB en daarna weer uploaden.<br>
 <br>
- Wat doet deze sketch;<br>
+### Wat doet deze sketch;<br>
   - Maakt verbinding met WiFi & MQQT<br>
   - Melden aan MQQT dat de wemos gereboot is.<br>
   - ontvangt enige berichten van mqqt naar wemos, zoals deepSleepinterval.<br>
   - Ga in deepsleep voor de gespcificeerde tijd.<br>
 <br>
- randvoorwaarde: WiFi, Ubuntu linux / Raspberry Pi Zero met dietpi image. Daarop staat sqlite, mosquitto en node-red geïnstalleerd.<br>
+
+### Requirements
+ -  Raspberry Pi Zero W 1.3
+ - Arduino IDE
+ - Wemos D1 Mini, of ESP-01, of andere ESP8266 apparaat.
+ - Mosquitto MQQT server
+ - SQLlite
+ - Node-red + sqlite extensies
+ - Optioneel: SQLite Administrator
+ 
+### Installatie
+ - Download en installeer Dietpi image van Andreas Spiess op Raspberry Pi Zero W 1.3
+ - Installeer Mosquitto MQQT
+ - Importeer de Node-red flow naar node-red
+ - Open de arduino sketch in Arduino IDE, en upload naar ESP8266.
+ - In Node-red flow, check dat je endpoints heb aangemaakt 
+
+### Randvoorwaarde
+ WiFi, Ubuntu linux / Raspberry Pi Zero met dietpi image. Daarop staat sqlite, mosquitto en node-red geïnstalleerd.<br>
  Je kunt ook Ubuntu gebruiken ipv Pi Zero.<br>
 <br>
  Om deze kode te gebruiken;<br>
