@@ -1,4 +1,4 @@
-# 20190604 door Michiel Erasmus #easylab4kids
+# 20190712 door Michiel Erasmus #easylab4kids
 import time
 from umqtt.simple import MQTTClient
 import ubinascii
@@ -24,21 +24,35 @@ last_message = 0
 counter = 0
 aantalMinuteDeepSleep = 1
 deepsleepTime = aantalMinuteDeepSleep * 60 * 1000
-message_interval = 30
+message_interval = 360
 next_publishevent = 0
 eersteStart = True
 
+try:
+    # check if the device woke from a deep sleep
+    if (machine.reset_cause() == machine.DEEPSLEEP_RESET):
+        print("client " + str(client_id) + "is wakker gewordenXXX.")
+    else:
+        print("POWER ON")
+except:
+    pass
+
+
 station = network.WLAN(network.STA_IF)
+try:
+    station = network.WLAN(network.STA_IF)
 
-station.active(True)
-station.connect(ssid, password)
+    station.active(True)
+    station.connect(ssid, password)
 
-while station.isconnected() == False:
-  pass
+    while station.isconnected() == False:
+      pass
 
-print('WiFi Connection successful')
-print(station.ifconfig())
-
+    print('WiFi Connection successful')
+    print(station.ifconfig())
+except:
+    pass
+    
 
 def getWeerdata():
     from bmp180 import BMP180
@@ -132,7 +146,7 @@ def lekkerSlaap(mqqt_client) :
     try:
         if (deepsleepTime > 1):
             mqqt_client.publish("weatherStation/client_id", str(client_id))
-            print("Deepsleep AAN: " + str(deepsleepTime))
+            print("Deepsleep AAN: " + str(aantalMinuteDeepSleep) + " minuut.")
             strTopic = "weatherStation/DEBUG"
             mqqt_client.publish(strTopic, "[{client: " + str(client_id) + ", topic: '" + strTopic + "', event: 'Deepsleep AAN', tijd: " + str(deepsleepTime) + " }]")
             deepsleepAanUit = 1
@@ -212,10 +226,10 @@ while True:
             client.publish("weatherStation/DHT/luchtdruk", str(druk1))
             next_publishevent = time.time() + message_interval
 
-            lekkerSlaap(mqqt_client=client)
+            #lekkerSlaap(mqqt_client=client)
             counter += 1
         else:
-            print("time.time()=" + str(time.time()), "  counter: " , counter, "volgende publikasie oor: ", next_publishevent - time.time() )
+            print("time.time()=" + str(time.time()), "  counter: " , counter, "volgende publikasie oor: ", next_publishevent - time.time()  )
     except OSError as e:
         print("")
         print("")
