@@ -10,9 +10,11 @@ esp.osdebug(None)
 import gc
 gc.collect()
 
-ssid = 'XXXXXXXXXXXXXXXXXXXX'
-password = 'XXXXXXXXXXXXXXXXXXXX'
+ssid = 'Volksrepubliek'
+password = 'C0mmodore64!'
 mqtt_server = '192.168.2.109'
+#EXAMPLE IP ADDRESS
+#mqtt_server = '192.168.1.144'
 client_id = ubinascii.hexlify(machine.unique_id())
 topic_sub = b'esp8266_notification'
 topic_pub = b'hello'
@@ -86,9 +88,19 @@ def connect_and_subscribe():
     client = MQTTClient(client_id, mqtt_server, user="admin", password="admin")
     
     try:
+        station.active(True)
+        station.connect(ssid, password)
+
+        while station.isconnected() == False:
+          pass
+
+        print('WiFi Connection successful')
+        
         client.set_callback(sub_cb)
         print("clientID " + str(client_id) + " verbinden aan MQQT: " + mqtt_server)
         client.connect()
+        
+        client.publish("weatherStation/halloWereld",  str(client_id) + " connected.")
         client.subscribe(topic_sub)
         client.subscribe("LED_INTERNAL")
         client.subscribe("weatherstation/deepSleepIntervalSekonden/waarde")
@@ -159,11 +171,12 @@ def deep_sleep_esp(msecs) :
         timer.init(period=15000, mode=machine.Timer.ONE_SHOT, callback=lambda t:esp.deepsleep(10000000))
 
         # set RTC.ALARM0 to fire after X milliseconds (waking the device)
+        rtc = machine.RTC()
         rtc.alarm(rtc.ALARM0, msecs)
 
         # put the device to sleep 
         machine.deepsleep()
-    except OSError as e:
+    except Exception as e:
         print(e)
 
 
@@ -188,7 +201,7 @@ while True:
     try:
         client.check_msg()
 
-        if (time.time() > next_publishevent) :
+        if (time.time() > next_publishevent):
             druk1, altitude1, temp1 = getWeerdata()
             print("Lugdruk:", druk1, " Hoogte: ", altitude1, " Temp: ", temp1)
 
