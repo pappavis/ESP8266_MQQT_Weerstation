@@ -1,4 +1,4 @@
-# 20190604 zie voorbeeld https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266/
+# 20190604 door Michiel Erasmus #easylab4kids
 import time
 from umqtt.simple import MQTTClient
 import ubinascii
