@@ -10,8 +10,8 @@ esp.osdebug(None)
 import gc
 gc.collect()
 
-ssid = 'Volksrepubliek'
-password = 'C0mmodore64!'
+ssid = 'ssid'
+password = 'password'
 mqtt_server = '192.168.2.109'
 #EXAMPLE IP ADDRESS
 #mqtt_server = '192.168.1.144'
@@ -24,7 +24,7 @@ last_message = 0
 counter = 0
 aantalMinuteDeepSleep = 1
 deepsleepTime = aantalMinuteDeepSleep * 60 * 1000
-message_interval = 360
+message_interval = 620
 next_publishevent = 0
 eersteStart = True
 
