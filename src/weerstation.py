@@ -1,4 +1,4 @@
-# 20190712 door Michiel Erasmus #easylab4kids
+# 20190816 door Michiel Erasmus #easylab4kids
 import time
 from umqtt.simple import MQTTClient
 import ubinascii
@@ -11,10 +11,8 @@ import gc
 gc.collect()
 
 ssid = 'ssid'
-password = 'password'
-mqtt_server = '192.168.2.109'
-#EXAMPLE IP ADDRESS
-#mqtt_server = '192.168.1.144'
+password = 'wagwoord'
+mqtt_server = '192.168.2.35'
 client_id = ubinascii.hexlify(machine.unique_id())
 topic_sub = b'esp8266_notification'
 topic_pub = b'hello'
@@ -24,7 +22,7 @@ last_message = 0
 counter = 0
 aantalMinuteDeepSleep = 1
 deepsleepTime = aantalMinuteDeepSleep * 60 * 1000
-message_interval = 620
+message_interval = 360
 next_publishevent = 0
 eersteStart = True
 
@@ -221,13 +219,14 @@ while True:
 
             msg = b'Hello #%d' % counter
             client.publish(topic_pub, msg)
-
             client.publish("weatherStation/DHT/temperature", str(temp1))
             client.publish("weatherStation/DHT/luchtdruk", str(druk1))
             next_publishevent = time.time() + message_interval
 
             #lekkerSlaap(mqqt_client=client)
             counter += 1
+            
+            client.publish("weatherStation/DHT/temperature_json", "{'clientid': '" + str(client_id) + "', 'temp': '" + str(temp1) + "', 'luchtdruk': '" + str(druk1) + "'}")
         else:
             print("time.time()=" + str(time.time()), "  counter: " , counter, "volgende publikasie oor: ", next_publishevent - time.time()  )
     except OSError as e:
