@@ -2,7 +2,7 @@
 Dit is de SQLite database voor de node-red flow. <br>
  <br>
  
-# isntructie
+# Instructie
 
 Je moet die iot.db voorbereiden
 ~~~bash
