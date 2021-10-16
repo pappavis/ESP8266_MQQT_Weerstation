@@ -31,6 +31,11 @@ Deze code behore bij Youtube videoclip:<br> <a href="https://www.youtube.com/wat
  <img src="https://github.com/pappavis/ESP8266_MQQT_Weerstation/blob/master/plaatjes/node-red_node.jpg?raw=true"><br> 
  5. Open de arduino sketch in Arduino IDE, en upload naar ESP8266.<br> 
  6. Check of die flows werkt op http://dietpi:1880/ui/ <br> 
+ 7. Open een command prompt en volgende uitvoeren.
+
+~~~bash
+pi@pi4:~ $ bash ./runme.sh
+~~~
  
 ### Randvoorwaarde
  WiFi, Ubuntu linux / Raspberry Pi Zero met dietpi image. Daarop staat sqlite, mosquitto en node-red geïnstalleerd.<br>
