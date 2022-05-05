@@ -14,3 +14,7 @@ pi@pi4:~ $ sudo chown pi:pi -r /home/pi/dbs/
 ~~~
 
 Nu zult de node-red flow ook werken.
+
+<img src='https://github.com/pappavis/ESP8266_MQQT_Weerstation/blob/master/dbs/iot_db_rechten.jpg?raw=true' alt='iot DB rechten in Linux'>
+
+Zo ziet het eruit.
